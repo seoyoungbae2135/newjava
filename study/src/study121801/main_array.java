@@ -125,10 +125,13 @@ public class main_array {
 		for(int i=0; i<info.length; i++) {
 			for(int k=0; k<info[i].length; k++) {
 				
-				System.out.printf("이름 :%s 나이 : %s 직업 : %s ",
-						info[i][k], info[i][k], info[i][k]) ;  
+				System.out.printf("이름 :%s 나이 : %s 직업 : %s \n",
+						info[i][k], info[i][k], info[i][k]);  
 			}
 		}
+		// 1차원배열만 잘 다룰 수 있으면 된다.
+		// 그럼 자연스레 2차원배열도 된다.
+		
 		
 	}
 }
