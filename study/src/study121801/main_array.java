@@ -46,21 +46,21 @@ public class main_array {
 //		}
 //		System.out.printf("│\n└──┴──┴──┴──┘");
 		
-		int[][] arr2 = new int[3][2]; // 이치원배열 아래와같이 6개데이터가 저장된다 
-		arr2[0][0] = 100;
-		arr2[0][1] = 30;
-		
-		arr2[1][0] = 50;
-		arr2[1][1] = 10;
-		
-		arr2[2][0] =112;
-		arr2[2][1] =125;
-		
-		int[][] bingo1 = new int[4][4];
-		int[][] bingo2 = {{}, {}, {}, {}};  //이와같이 만들어도 4*4 2차원 배열이 만들어진다
-		int[][] bingo = new int[][] {  // 이와같이 만들어도 된다.
-			{24,12,45,11}, {9,4,12,31}, {5,41,39,17}, {1,50,43,22}
-		};
+//		int[][] arr2 = new int[3][2]; // 이치원배열 아래와같이 6개데이터가 저장된다 
+//		arr2[0][0] = 100;
+//		arr2[0][1] = 30;
+//		
+//		arr2[1][0] = 50;
+//		arr2[1][1] = 10;
+//		
+//		arr2[2][0] =112;
+//		arr2[2][1] =125;
+//		
+//		int[][] bingo1 = new int[4][4];
+//		int[][] bingo2 = {{}, {}, {}, {}};  //이와같이 만들어도 4*4 2차원 배열이 만들어진다
+//		int[][] bingo = new int[][] {  // 이와같이 만들어도 된다.
+//			{24,12,45,11}, {9,4,12,31}, {5,41,39,17}, {1,50,43,22}
+//		};
 		
 //		for( int i=0; i<bingo.length; i++) {
 //			for(int k=0; k<bingo[i].length; k++) {
@@ -71,17 +71,17 @@ public class main_array {
 		
 		//bingo 배열에서 25이하는 숫자대신 ★(한글 ㅁ에 한자키)을 출력하세요
 		// teacher
-		for( int i=0; i<bingo.length; i++) {
-			
-			for(int k=0; k<bingo[i].length; k++) {
-				if( bingo[i][k] <= 25)
-					System.out.printf(" %2s ","★"); // %2s 는 문자출력
-				else
-					System.out.printf(" %2d ",bingo[i][k]); 
-			}
-			System.out.println();
-		}
-		
+//		for( int i=0; i<bingo.length; i++) {
+//			
+//			for(int k=0; k<bingo[i].length; k++) {
+//				if( bingo[i][k] <= 25)
+//					System.out.printf(" %2s ","★"); // %2s 는 문자출력
+//				else
+//					System.out.printf(" %2d ",bingo[i][k]); 
+//			}
+//			System.out.println();
+//		}
+//		
 		// 크기가 서로다른 이차원배열
 		// int[] a, b, c;
 //		int[][] arr5= new int[3][];
@@ -108,29 +108,72 @@ public class main_array {
 //		
 //		System.out.println(num11+" "+word);
 		
-		String[][] info =new String[3][3];
-		
-		for(int i=0; i<info.length; i++) {
-			System.out.print("이름 : ");
-			info[i][0] = scan.nextLine();
-			System.out.print("나이 : ");
-			int age = scan.nextInt();
-			info[i][1] = Integer.toString(age); //숫자를 문자열로 변경
-						//문자열을 숫자로변경 - Integer.parseInt();
-						// Float.parseFloat(); Double.parseDouble();  실수로 변경, 
-			scan.nextLine(); //숫자(나이)입력후 문자입력이 안되므로 입력버퍼에서 엔터를 제거한다
-			System.out.print("직업 : ");
-			info[i][2] = scan.nextLine();
-		}
-		for(int i=0; i<info.length; i++) {
-			for(int k=0; k<info[i].length; k++) {
-				
-				System.out.printf("이름 :%s 나이 : %s 직업 : %s \n",
-						info[i][k], info[i][k], info[i][k]);  
-			}
-		}
+//		String[][] info =new String[3][3];
+//		
+//		for(int i=0; i<info.length; i++) {
+//			System.out.print("이름 : ");
+//			info[i][0] = scan.nextLine();
+//			System.out.print("나이 : ");
+//			int age = scan.nextInt();
+//			info[i][1] = Integer.toString(age); //숫자를 문자열로 변경
+//						//문자열을 숫자로변경 - Integer.parseInt();
+//						// Float.parseFloat(); Double.parseDouble();  실수로 변경, 
+//			scan.nextLine(); //숫자(나이)입력후 문자입력이 안되므로 입력버퍼에서 엔터를 제거한다
+//			System.out.print("직업 : ");
+//			info[i][2] = scan.nextLine();
+//		}
+//		for(int i=0; i<info.length; i++) {
+//			for(int k=0; k<info[i].length; k++) {
+//				
+//				System.out.printf("이름 :%s 나이 : %s 직업 : %s \n",
+//						info[i][k], info[i][k], info[i][k]);  
+//			}
+//		}
 		// 1차원배열만 잘 다룰 수 있으면 된다.
 		// 그럼 자연스레 2차원배열도 된다.
+		//배열의 사용은 인덱스사용이 중요한다. 0번인덱스부터 시작한다!!!
+		
+		//과제 - 자바배열문제
+		//{30,4,50,60,14,80,45,72,94,25}
+		//10개의 정수가 저장된 배열의값을 확인하고 
+		//평균을 구하세요.
+		//10개정수의 평균이하인 숫자들은 F, 평균이상인 숫자들은 A라고 표기되는
+		//배열을 만들어 출력하세요
+		
+		//출력 결과 - F, F, A, A, F, A, F, A, A, F
+		
+		//report231218
+//		int[] num = {30,4,50,60,14,80,45,72,94,25};
+//		int avg = (num[0]+num[1]+num[2]+num[3]+num[5]+num[6]+num[7]+num[8]+num[9])/10;
+//		char[] cha = new char[10];
+//		
+//		for(int i=0; i<num.length; i++) {
+//			if( num[i] > avg) {
+//				cha[i] = 'A';
+//			}else {
+//				cha[i] = 'F';
+//			}
+//		}
+//
+//		System.out.println(Arrays.toString(cha));
+//		
+		
+		//teacher
+		int[] score={30,4,50,60,14,80,45,72,94,25};
+		
+		int total=0;
+		for(int i=0; i< score.length; i++) {
+			total += score[i];
+		}
+		int avg = total/score.length;
+		char[] grade = new char[10];
+		for( int i=0; i< score.length; i++) {
+			if(score[i] <= avg)
+				grade[i] = 'F';
+			else
+				grade[i] = 'A';
+		}
+		System.out.println( Arrays.toString(grade));
 		
 		
 	}
