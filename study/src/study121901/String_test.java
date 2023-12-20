@@ -50,8 +50,55 @@ public class String_test {
 		 *3. 크리스마스를 영어로 번역하여 출력하세요(대문자로)
 		 *4. 세번째#뒤의 가사가 무었인지 출력하세요.
 		 */
+		//231219 report
+		String[] str = song.split("#");
+		System.out.println(Arrays.toString(str)+"\n");
+//		System.out.println(str[0]);
+//		System.out.println(str[1]);
+//		System.out.println(str[2]);
+		
+		String tem = song.replaceAll("당신", "그대");
+		System.out.println(tem);
+		
+		String chrt = song.replaceAll("크리스마스", "CHRISTMAS");
+		System.out.println(chrt);
+		
+//		String cha = song.substring(song.indexOf(63), song.indexOf(72));
+		System.out.println(str[3]);
+		
+		//teacher
+		System.out.println(""+"원본 :"+song+"\n");
+		
+		String song1 = song.replaceAll("#", "\n");
+		System.out.println( song1 );
+		String[] song2 = song.split("#");
+		for( String sng : song2)  // 
+			System.out.println(sng);
+		
+		String song3 = song.replaceAll("당신", "그대");
+		System.out.println("\n\n"+song3+"\n");
+		
+		String song4 = song1.replaceAll("크리스마스", "cristmas");
+		System.out.println(song4.toUpperCase()+"\n\n");
+		
+		String[] song5 = song.split("#");
+		System.out.println( song5[3].trim()); // trim() - 공백제거
+		
 		
 
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
