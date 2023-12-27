@@ -10,7 +10,7 @@ public class aircon extends house{
 		super(brand);
 		
 	}
-	
+	@Override
 	public void power() {
 		onoff = !onoff;
 		System.out.println( "에어컨 전원 : "+ onoff);
