@@ -4,7 +4,7 @@ public abstract class house {  //class 전단에 abstract -> 추상메서드 정
 	
 	public static int makedate=20231209; //클래스변수
 	
-	public boolean onoff;  // 다른 패키지에있는 자식클래스에서도 사용하려면  
+	public boolean onoff;  // 다른 패키지에있는 자식클래스에서도 사용하려면 
 	String brand;
 	public int sn=10000; //시리얼넘버
 	
