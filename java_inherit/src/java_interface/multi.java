@@ -5,7 +5,7 @@ public class multi {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		UsbCable k = new keyboard();
+		UsbCable k = new keyboard(); //
 		k.plugNplay();
 		k.keyValue();
 		
