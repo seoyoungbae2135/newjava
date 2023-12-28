@@ -30,15 +30,15 @@ public class order1 {
 
 	public static void main(String[] args) {
 		
-		Restaurant owner = new Restaurant();
-		CustomerA a = new CustomerA();
-		CustomerB b = new CustomerB();
-		a.setRequest("청국장");
-		b.setRequest("촌돼지김치찌게");
-		
-		owner.giveFood(a);
-		owner.giveFood(b);
-				
+//		Restaurant owner = new Restaurant();
+//		CustomerA a = new CustomerA();
+//		CustomerB b = new CustomerB();
+//		a.setRequest("청국장");
+//		b.setRequest("촌돼지김치찌게");
+//		
+//		owner.giveFood(a);
+//		owner.giveFood(b);
+//				
 
 	}
 
