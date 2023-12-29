@@ -13,7 +13,7 @@ public class computer extends house{
 	}
 	
 	@Override   //에너테이션 이라고한다. 자식클래스에서 Override를 사용하지않을경우 부모클래스처럼 추상클래스로 변경해야한다
-	void power() {
+	public void power() {
 		onoff = !onoff;
 		System.out.println( "컴퓨터 전원 : "+ onoff);
 	}
