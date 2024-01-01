@@ -4,7 +4,7 @@ public class hydra implements unit { // interface unit 연결(implements unit)
 
 	private int hp;
 	private int atk;
-	private String damageType;
+	private String damageType; //dwdwv
 	
 	public hydra() {
 		this.hp=80;
