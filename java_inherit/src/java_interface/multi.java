@@ -63,6 +63,8 @@ class keyboard implements UsbCable, Bluetooth, Wifi{
 // 키보드 구매 했다
 // 컴퓨터와 연결방식 - usb, 블루투스, 리시버, wifi, 
 // git hurb
+
+
 // pc웹또는 모바일웹 UI 설계 - 피그마
 // 주제:동물원
 // 페이지 수 : 3페이지 (메인페이지. 서브페이지 2개)
