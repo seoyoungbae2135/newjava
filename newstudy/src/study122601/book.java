@@ -4,7 +4,7 @@ public class book {
 
 	static int cnt=0;  // 클래스 변수 
 	
-	private String title;   // 인스턴스변수
+	String title;   // 인스턴스변수
 	String writer;  // 인스턴스변수
 	final int book_num; // 인스턴스 상수
 	
