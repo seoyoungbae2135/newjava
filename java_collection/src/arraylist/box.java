@@ -1,4 +1,4 @@
-package arraylist;
+package arraylist;  //20240102 제네릭
 
 public class box<T> {
 

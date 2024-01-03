@@ -1,4 +1,4 @@
-package arraylist;
+package arraylist; //20240102
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,6 +27,8 @@ public class java_study {
 		
 		System.out.println( mbr );
 		
+// 아래부분 실행시 상단부 주석처리		
+		
 //		ArrayList<Integer> arr = new ArrayList<Integer>(); //타입을<>안에 클래스로 지정해야한다 Integer는 int의 클래스
 //		
 //		arr.add(10);  //입력시 add 사용
@@ -41,7 +43,7 @@ public class java_study {
 //			if( arr.get(i) > 20)     // 출력시 get사용
 //				System.out.println( arr.get(i));
 //		}
-//		System.out.println("arratlist에 값 존재여부 contains " + arr.contains(20)); 
+//		System.out.println("arraylist에 값 존재여부 contains " + arr.contains(20)); 
 //	System.out.println("값이 몇번째 인덱스 indexOf " + arr.indexOf(50));
 //	System.out.println("arraylist에 값이 몇개있냐 size " + arr.size());
 //	arr.remove(2); //지정한 인덱스 위치의 값 삭제

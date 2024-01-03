@@ -1,4 +1,4 @@
-package arraylist;
+package arraylist;   //20240102 제제릭
 
 public class test {
 
