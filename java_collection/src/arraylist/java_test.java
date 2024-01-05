@@ -32,11 +32,11 @@ public class java_test {
 		//사용자(개발자)정의 클래스는 비교, 정렬, 검색을 위한 메서드들이 없기때문에 
 		// indexOf, contains, sort와 같은 메서드 사용시 필요한 메서드들을 구현해야한다.
 		//두가지 방법이 있다, Colections 클래스, 
-		Collections.sort( (List<book>) list );
+		Collections.sort( (List<book>) list ); //book.java에서 public int compareTo(book b) {} 메서드를 리턴받아 정렬
 		Iterator<book> it = list.iterator();  // Iterator도 <> 필요
 		while(it.hasNext()) {  // 반복문은 while문만 적용
 			book data = it.next(); 
-			System.out.println( data );  // 출간년도로 정렬되어 출력
+			System.out.println( data );  // book.java의 return this.year - b.year; 를 활성화 하면 출간년도로 정렬되어 출력
 		}
 //		list.sort(Comparator.naturalOrder());
 		
