@@ -25,7 +25,7 @@ public class menu {  //menu.txt 불러와서 저장
 	@Override
 	public String toString() {
 		
-		return null;
+		return menu_name; //+" "+type;
 	}
 	
 	
