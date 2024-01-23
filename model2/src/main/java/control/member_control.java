@@ -18,7 +18,7 @@ import service.member_service;
 @WebServlet("/members") //servlet class를 호출하는 주소 -> /members
 public class member_control extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    private member_service ms = new member_service();   
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -69,12 +69,15 @@ public class member_control extends HttpServlet {
 		// 서버대신해서 요청을 처리해주는 역할을 한다 
 		request.setCharacterEncoding("UTF-8");
 		
-		member_service ms = new member_service();
+		
 		
 		String cmd = request.getParameter("cmd"); // 요청주소의 cmd 파라미터값 가져오기
 		String view ="/"; //사용자에게 제공할 기본 페이지
+		
 		if(cmd.equals("signup")) { //요청파라미터가 signup일경우 회원가입페이지를 요청한다
 			request.setAttribute("prt", "member/signup"); //prt에 value값 저장 
+			request.setAttribute("emailList", ms.emailList());
+			
 			//회원가입페이지를 제공하기위해 request객체를 이용한 것일뿐 반드시 이와갗은 방법이 아니어도 된다
 			//사용자 요청에 의한 페이지제공은 정적페이지(.html, .jsp 등)그대로 제공할 수도 있고
 			//위와같이 include방식으로 제공할 수도있다

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%--20240123-4 --%>
 
+${ emailList[0] }
 
 <div id="signup_wrap">
 	<form id="signupFm" method="post" action="/members" >
@@ -16,6 +17,7 @@
 		<div class="input_data">
 			<label for="email">E-MAIL</label>
 			<input type="email" name="email" id="email" required> <!-- required->필수입력으로 설정  -->
+			<span class="email_msg"></span>
 		</div>
 		<div class="input_data">
 			<label for="pin">Password</label>

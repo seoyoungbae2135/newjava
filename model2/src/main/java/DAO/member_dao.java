@@ -7,6 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import DTO.member;
 
@@ -19,6 +21,24 @@ public class member_dao {
 	public member_dao() {
 		DriverLoad();
 		ConnectionDB();
+	}
+	
+	public String[] findAllEmail() {
+		List<String> list = new ArrayList<>();
+		String sql ="select email from member";
+		try {
+			st = conn.createStatement();
+			rs = st.executeQuery(sql);
+			while( rs.next()) {
+				list.add(rs.getString("email"));
+			}
+			if( list.isEmpty()) return null;
+			else return list.toArray(new String[list.size()]);
+		}catch(SQLException e) {
+			System.out.println("이메일 조회 실패");
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 	public void insert(member data) {
@@ -44,7 +64,7 @@ public class member_dao {
 		}
 	}
 	private void ConnectionDB() {
-		String url="jdbc:mysql://localhost:3306/ybsho62";
+		String url="jdbc:mysql://localhost:3306/ybsho62"; // dbeaver db ybsho62 url 
 		String user="ybsho62";
 		String password="123456";
 		try {

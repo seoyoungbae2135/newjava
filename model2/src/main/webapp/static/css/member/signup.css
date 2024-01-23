@@ -2,12 +2,13 @@
 
 /* 20240123-4 */
 #signup_wrap{
-	width:550px;
+	width:500px;
 	margin:0 auto;
 	position:relative;
 }
 .input_data{
-	margin:10px 0;
+	position:relative;
+	margin:15px 0;
 	display:flex;
 	width:100%;
 	justify-content:space-between;
@@ -15,7 +16,7 @@
 	font-size:25px;
 }
 .input_data input{
-	width:350px;
+	width:300px;
 	height:40px;
 	font-size:25px;
 	border:0;
@@ -59,6 +60,18 @@
 .signBt .inactive{
 	background:#aaa;
 }
+
+.email_msg{
+	position:absolute;
+	bottom:-15px;
+	right:0;
+	font-size:12px;
+	color:green;
+}
+.warning{ color:red;}
+
+
+
 
 
 

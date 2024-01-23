@@ -15,7 +15,11 @@ public class member_service {
 
 	private member_dao mdao = new member_dao();
 	
-	public String insert(HttpServletRequest request, HttpServletResponse response) throws IOException  { //throws IOException - try catch 대신 적용(넘기는  
+	public String[] emailList() {
+		return mdao.findAllEmail();
+	}
+	
+	public String insert(HttpServletRequest request, HttpServletResponse response) throws IOException  { //throws IOException - try catch 대신 적용(넘기는 코드)
 		
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pin");
