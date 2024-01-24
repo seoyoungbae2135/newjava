@@ -8,14 +8,14 @@
 	<div id="top">
 		<ul class="top_list">
 			<c:if test="${ sessionScope.user == null }"> <!-- 로그인 하지않았을때 보이는 메뉴 -->
-				<li><a href="">로그인</a></li>
-				<li><a href="/members?cmd=signup">회원가입</a></li>
+				<li><a href="/members/signIn">로그인</a></li> <!-- 20240124-1 수업 참조 -->
+				<li><a href="/members/signup">회원가입</a></li> <!-- 20240124-1 수정 수업 참조 "/members?cmd=signup"에서 변경, web.xml 변경에 의해 cmd 사용안함-->
 			</c:if>
 			
 			<c:if test="${ sessionScope.user != null }"> <!-- 로그인 했을때 보이는 메뉴 -->
-				<li><a href=""></a></li>
-				<li><a href="">내정보</a></li>
-				<li><a href="">로그아웃</a></li>
+				<li><a href="/members/myWrite">${ sessionScope.user.name }</a></li> <!-- 20240124-1, 8 수업 참조 -->
+				<li><a href="/members/myPage">내정보</a></li> <!-- 20240124-1 수업 참조 -->
+				<li><a href="/members/logout">로그아웃</a></li> <!-- 20240124-1 수업 참조 -->
 			</c:if>	
 			<li><a href="">HELP</a></li>
 		</ul>

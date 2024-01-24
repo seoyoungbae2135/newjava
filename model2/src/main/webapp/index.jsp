@@ -47,12 +47,12 @@
 <!--Jquery-->
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>    
 
-<link rel="stylesheet" href="./static/css/default.css">
-<script src="./static/js/init.js"></script>
+<link rel="stylesheet" href="http://localhost:8080/static/css/default.css"> <%-- 절대경로로 변경 20240124-2 수업참조--%>
+<script src="http://localhost:8080/static/js/init.js"></script> <%-- 절대경로로 변경 20240124-2 수업참조--%>
 
 <%-- part 파라미터의 유무에 따라 추가 css,js --%>
-<link rel="stylesheet" href="./static/css/${part }.css">
-<script src="./static/js/${part }.js"></script>
+<link rel="stylesheet" href="http://localhost:8080/static/css/${part }.css"> <%-- 절대경로로 변경 20240124-2 수업참조--%>
+<script src="http://localhost:8080/static/js/${part }.js"></script> <%-- 절대경로로 변경 20240124-2 수업참조--%>
 </head>
 <body>
 	<div id="wrap">

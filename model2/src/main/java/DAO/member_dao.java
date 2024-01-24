@@ -23,6 +23,28 @@ public class member_dao {
 		ConnectionDB();
 	}
 	
+	//로그인 처리 메서드
+	public member findByemailpw(String email, String pw) {
+		
+		String sql = "select * from member where email=? and pw=?";
+		try {
+			pt = conn.prepareStatement(sql);
+			pt.setString(1, email);
+			pt.setString(2, pw);
+			rs = pt.executeQuery();
+			if( rs.next()) { //참일경우 로그인 성공
+				return new member(rs.getInt("id"), email, 
+						rs.getString("name"), rs.getString("tel"));
+			}
+			
+		}catch(SQLException e) {
+			System.out.println("로그인 인증 데이터베이스 조회 실패");
+			e.printStackTrace();
+		}
+		
+		return null; //로그인 실패(이메일 또는 비번 틀림)
+	}
+	
 	public String[] findAllEmail() {
 		List<String> list = new ArrayList<>();
 		String sql ="select email from member";

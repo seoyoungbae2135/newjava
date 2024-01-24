@@ -9,4 +9,15 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <!-- servlet mapping 작업, pc부팅시 server start 후 페이지가 제대로 표현되지 않는 경우가 발생하는 것을 방지하기 위하여 -->
+  <servlet>
+  	<servlet-name>member_cont</servlet-name>
+  	<servlet-class>control.member_control</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>member_cont</servlet-name>
+  	<url-pattern>/members/*</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
