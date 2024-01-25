@@ -25,6 +25,8 @@ public class member_login implements member_action{
 				request.setAttribute("prt", "member/signin");
 				return "/";
 			}else { //로그인 성공
+				dao.login_record(user.getNum(), request.getRemoteAddr()); //request.getRemoteAddr() -> 사용자 주소
+				dao.getPicture(user);//이미지불러오기 20240125-8
 				request.getSession().setAttribute("user", user);
 			}
 			response.sendRedirect("/");

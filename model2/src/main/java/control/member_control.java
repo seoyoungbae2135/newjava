@@ -55,7 +55,7 @@ public class member_control extends HttpServlet {
 				e.printStackTrace();  // 20240124-4 수업
 			}
 		}
-			System.out.println( target.keySet() );
+			//System.out.println( target.keySet() );
 	}
 
 	/**
@@ -94,13 +94,13 @@ public class member_control extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		String uri = request.getRequestURI(); //20240124-2 수업참조
-		String path = request.getContextPath(); //20240124-2 수업참조
+		//String path = request.getContextPath(); //20240124-2 수업참조
 		// System.out.println(uri+" "+url); //20240124-2 수업참조
 		
 		String cmd = uri.substring(9); //20240124-2 수업참조  .getParameter("cmd"); // 요청주소의 cmd 파라미터값 가져오기
 		String view ="/"; //사용자에게 제공할 기본 페이지 "/"는 index.jsp
 		
-		System.out.println(cmd);
+		//System.out.println(cmd);
 		member_action mem = target.get(cmd); // 20240124-4 수업
 		view = mem.action(request, response); // properties 파일내용을 연결
 		

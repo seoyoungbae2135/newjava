@@ -51,7 +51,7 @@
 	let email = temp.split(",");
 	console.log( email);
 	
-	$("#email").("blur", function() { // 커서가 빠졌을때(blur)
+	$("#email").on("blur", function() { // 커서가 빠졌을때(blur)
 		if( $(this).val() != '' ) { // 문자가 있다면
 			if( email.indexOf($(this).val()) == -1 ){ // 비교해서 같은 메일주소가 없다면
 				$(".email_msg").text("사용가능한 이메일 입니다")
