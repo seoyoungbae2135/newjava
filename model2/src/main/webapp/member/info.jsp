@@ -11,7 +11,7 @@
 <!-- 이미지 보이기 20240125-8  -->
 <c:set var="img" value=""/>
 <c:if test="${user.image != null }">
-	<c:set var="img" value="style='background:url(http://192.168.0.108/static/image/${user.image }) no-repeat center; background-size:contain;'"></c:set>
+	<c:set var="img" value="style='background:url(http://192.168.0.108/static/image/${user.image }) no-repeat center; background-size:contain;'"/>
 </c:if>
 <div id="info_wrap">
 	<form method="post" action="/members/infoUpdate" enctype="multipart/form-data">

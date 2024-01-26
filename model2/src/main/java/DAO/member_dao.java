@@ -1,5 +1,6 @@
 package DAO;
-// 20240123-5~6, 2024
+// 20240123-5~6, 20240126-6 상속으로 변경
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,16 +14,10 @@ import java.util.List;
 import DTO.LoginHistory;
 import DTO.member;
 
-public class member_dao {
-	private Connection conn=null; //접속
-	private Statement st=null; //sql 질의문
-	private PreparedStatement pt=null; //sql 질의문
-	private ResultSet rs=null; //결과
+public class member_dao extends parent_dao{
 	
-	public member_dao() {
-		DriverLoad();
-		ConnectionDB();
-	}
+	
+	
 	
 	// 회원정보 수정 20240125-7 웹페이지 내정보에서 이미지 불러오고 수정버튼 눌렀을때 dbeaver에 이미지이름 저장 및 static/image에 이미지가 들어오는 확인
 	public void update(member user) {
@@ -156,23 +151,7 @@ public class member_dao {
 		}
 	}
 	
-	private void DriverLoad() { // DB드라이버 로드
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-		}catch(ClassNotFoundException e) {
-			System.out.println("드라이버로드실패");
-		}
-	}
-	private void ConnectionDB() {
-		String url="jdbc:mysql://localhost:3306/ybsho62"; // dbeaver db ybsho62 url 
-		String user="ybsho62";
-		String password="123456";
-		try {
-			conn=DriverManager.getConnection(url,user,password);
-		}catch(SQLException e) {
-			System.out.println("데이터베이스접속실패");
-		}
-	}
+	
 }
 
 

@@ -41,7 +41,7 @@
 .nonePicture div{ padding:15px;}
 #face{display:none;}
 #face + label{
-	background:f1506e;
+	background:#f1506e;
 	color:#fff;
 	padding:5px;
 	
@@ -64,7 +64,7 @@
 .date { width:40%;}
 .login_ip, .detail{width:40%;}
 .blocking, note{width:20%;}
-.blocking a, detail a{color:blue;}
+.blocking a, .detail a{color:blue;}
 
 
 

@@ -26,7 +26,7 @@
 				$(".picture").css("background", "url("+e.target.result+") no-repeat center ");
 				$(".picture").css("background-size", "contain"); //이미지에 따라 contain 또는 cover 적용
 			};
-			reader.readAsDataURL( $(this).files[0]);
+			reader.readAsDataURL( file );
 		});
 		
 });
