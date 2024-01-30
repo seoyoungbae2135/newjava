@@ -4,7 +4,7 @@
  
  $(function(){
 	
-	4("#keyword").on("keyup",function(e){
+	$("#keyword").on("keyup",function(e){
 		if( e.keyCode==13){
 			$("#searchFm").submit();
 		}

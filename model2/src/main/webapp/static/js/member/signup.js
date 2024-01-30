@@ -3,6 +3,16 @@
  */
  
  $(function(){
+	// 20240129-2 homework teacher 추가 (미리보기부분)
+	$("#face").on("change",function( event ){
+			var file = event.target.files[0];
+			var reader = new FileReader();
+			reader.onload=function(e){
+				$(".photo").css("background", "url("+e.target.result+") no-repeat center ");
+				$(".photo").css("background-size", "contain"); //이미지에 따라 contain 또는 cover 적용
+			};
+			reader.readAsDataURL( file );
+		}); //여기까지
  
  	$(".input_data input").on("keyup",function(){
 		for(var i=0; i<$(".input_data input").length; i++){

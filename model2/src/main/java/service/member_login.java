@@ -8,7 +8,7 @@ import DAO.member_dao;
 import DTO.member;
 //20240124-4
 public class member_login implements member_action{
-	private member_dao dao = new member_dao();
+	private member_dao dao = new member_dao(); // 데이터베이스를 사용하는 객체에 적용
 	
 	@Override
 	public String action(HttpServletRequest request, HttpServletResponse response) throws IOException {

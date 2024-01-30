@@ -57,7 +57,7 @@ public class member_dao extends parent_dao{
 			pt = conn.prepareStatement(sql);
 			pt.setInt(1, id);
 			pt.setString(2, img);
-			pt.executeUpdate();
+			pt.executeUpdate(); // String sql = insert일때 executeUpdate()
 		}catch(SQLException e) {
 			System.out.println("이미지저장 실패");
 			e.printStackTrace();
@@ -71,7 +71,7 @@ public class member_dao extends parent_dao{
 		try {
 			pt = conn.prepareStatement(sql);
 			pt.setInt(1,  id);
-			rs = pt.executeQuery();
+			rs = pt.executeQuery(); // String sql = select일때 executeQuery()
 			while(rs.next()) {
 				list.add(new LoginHistory( rs.getInt("id"), rs.getString("ipaddr"), rs.getTimestamp("login_date")));
 			}
@@ -136,7 +136,7 @@ public class member_dao extends parent_dao{
 		return null;
 	}
 	
-	public void insert(member data) {
+	public int insert(member data) { //20240129-1 homework teacher void를 int로 수정
 		String sql="insert into member(email, pw, name, tel) values(?,?,?,?)";
 		try {
 			pt=conn.prepareStatement(sql);
@@ -145,10 +145,18 @@ public class member_dao extends parent_dao{
 			pt.setString(3, data.getName());
 			pt.setString(4, data.getTel());
 			pt.executeUpdate();
+			sql = "select id from member order by id desc limit 1"; // 20240129-1 homework teacher 추가 desc -> 내림차순 정렬, limit 1 -> 하나만 가져와라(limit는 제한)
+			st = conn.createStatement();
+			rs = st.executeQuery(sql);
+			if( rs.next()) {
+				return rs.getInt("id");
+			} // 여기까지 20240129-1 homework teacher 추가
+			
 		}catch(SQLException e) {
 			System.out.println("회원가입 데이터베이스 저장실패");
 			e.printStackTrace();
 		}
+		return 0; //20240129-1 추가
 	}
 	
 	

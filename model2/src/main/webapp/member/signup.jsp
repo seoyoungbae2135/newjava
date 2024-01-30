@@ -7,7 +7,7 @@
 <%-- ${ emailList[0] } --%> <%-- EL표현식 lib에 등록된 jstlel파일 의해 그대로 동작 20240124-2 수업참조  --%>
 
 <div id="signup_wrap">
-	<form id="signupFm" method="post" action="/members/signSave"> <!-- 20240124-1 수업 참조  -->
+	<form id="signupFm" method="post" action="/members/signSave" enctype="multipart/form-data"> <!-- 20240124-1 수업 참조, 20240129-1 homework 추가  -->
 		<input type="hidden" name="cmd" value="dao">  <!-- 20240124-1, 5 수업 참조  -->
 		
 		<div class="myphoto">
