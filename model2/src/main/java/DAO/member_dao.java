@@ -17,6 +17,16 @@ import DTO.member;
 public class member_dao extends parent_dao{
 	
 	
+	//비밀번호변경 20240131-8
+	public void updatePassword(String email,String pin) {
+		String sql="update member set pw=? where email=?";
+		try {
+			pt= conn.prepareStatement(sql);
+			pt.setString(1, pin);
+			pt.setString(2, email);
+			pt.executeUpdate();
+		}catch(SQLException e) {}
+	}
 	
 	
 	// 회원정보 수정 20240125-7 웹페이지 내정보에서 이미지 불러오고 수정버튼 눌렀을때 dbeaver에 이미지이름 저장 및 static/image에 이미지가 들어오는 확인

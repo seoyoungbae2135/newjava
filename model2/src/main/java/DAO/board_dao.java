@@ -41,7 +41,7 @@ public class board_dao extends parent_dao{
 						rs.getString(3), rs.getString(5), rs.getTimestamp(4));
 				list.add(data);
 			}
-			if(list.isEmpty()) {
+			if(!list.isEmpty()) {
 				return list;
 			}
 		}catch(SQLException e) {
@@ -160,7 +160,10 @@ public class board_dao extends parent_dao{
 	public List<board> Allselect( int row ){
 		List<board> list = new ArrayList<>();
 		
-		String sql="select * from board order by wdate desc limit ? , 10"; // 게시글 10개씩 불러오기 20240129-3
+		String sql="select board.* , count(reply.id) as cnt " //20240131-4추가
+				+" from board "
+				+" left join reply on board.id=reply.board_id "
+				+" group by board.id order by wdate desc limit ? , 10 "; // 게시글 10개씩 불러오기 20240129-3
 		try {
 			pt = conn.prepareStatement(sql);
 			pt.setInt(1, row);
@@ -169,7 +172,8 @@ public class board_dao extends parent_dao{
 			while( rs.next()) {
 				board data = new board(rs.getInt(1), rs.getInt(7), rs.getInt(9),
 						rs.getString(2), rs.getString(3), rs.getString(4), 
-						rs.getString(5), rs.getString(8), rs.getTimestamp(6));
+						rs.getString(5), rs.getString(8), rs.getTimestamp(6), 
+						rs.getInt("cnt")); //20240131-4 추가
 				list.add(data);
 			}
 			if( !list.isEmpty()) // list가 비어있지 않다면 20240129-3

@@ -13,11 +13,13 @@ public class member_login implements member_action{
 	@Override
 	public String action(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		if( request.getParameter("cmd")==null) {
+			
 			request.setAttribute("prt", "member/signin");
 			return "/";
 		}else { //이메일과 비번으로 로그인 처리
 			String email = request.getParameter("email");
 			String pw = request.getParameter("pin");
+			String preUrl=request.getParameter("cmd"); //로그인페이지 이전주소 20240131-4 추가
 			
 			member user = dao.findByemailpw(email, pw);
 			if( user == null) { //로그인 실패
@@ -29,7 +31,9 @@ public class member_login implements member_action{
 				dao.getPicture(user);//이미지불러오기 20240125-8
 				request.getSession().setAttribute("user", user);
 			}
-			response.sendRedirect("/");
+			if(preUrl.indexOf("/members") >= 0 || preUrl.indexOf("http://192.168.0.108") == -1)
+				preUrl="/";
+			response.sendRedirect(preUrl); // 20240131-4 수정
 			return null;
 		}
 	}

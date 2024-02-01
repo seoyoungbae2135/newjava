@@ -38,10 +38,12 @@
 	<%-- 20240130-3 수정하여 댓글저장하는 코드 문제냄  --%>
 	<div id="reply_wrap">
 		<div class="replay_input">
+			<h3>답글 작성</h3>
 			<form method="post" action ="/board_reply.do" id="replyFm">
 				<input type="hidden" name="board_id" value="${data.id }">
 				<div class=input_box">
-					<textarea name="comment" id="comment"></textarea>
+					<textarea name="comment" id="comment" spellcheck="false"></textarea>
+					<small class="text_len">(0/60000)</small>
 					<button class="reply_bt">작성</button>
 				</div>
 			</form>
@@ -72,6 +74,21 @@
 </div>
 
 <script>
+
+	$("#comment").on("keyup",function(){
+		var text=$(this).val();
+		$(this).height("auto");
+	var scrollHeight = $(this)[0].scrollHeight;
+	$(this).height(scrollHeight);
+	
+		if(text.length >60000){
+			$(this).val(text.substring(0,60000));
+			return;
+		}
+		$(".text_len").text("(+text.length+"/60000")");
+	})
+	
+	
 	function update(i){
 		location.href="/board_updatePage.do?id="+i;
 	}

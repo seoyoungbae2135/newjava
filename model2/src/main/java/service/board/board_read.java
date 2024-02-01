@@ -31,6 +31,8 @@ public class board_read implements board_action{
 		board view = dao.selectDetail( num );
 		List<reply> reply_list = dao.findReply( num ); //20240130-7
 		
+		
+		
 		if( isCook) { //쿠키를 이용하여 조회수가 일1회만 증가하도록 20240129-7
 			dao.hitIncrease(num); //조회수증가
 			Cookie cook = new Cookie(num+"", "ok");

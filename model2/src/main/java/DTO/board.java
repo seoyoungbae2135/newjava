@@ -12,6 +12,7 @@ public class board {
 	private String lang;
 	private Date wdate;
 	private String content;
+	private int reply_cnt; // 20240131-4 추가, get set 추가
 	
 	// 글 작성할때 사용되는 메서드
 	public board(int mid , String title, String writer , String answer_mail,
@@ -31,6 +32,15 @@ public class board {
 		this.id=id;
 		this.hit=hit;
 		this.wdate=wdate;
+	}
+	// 20240131-4 추가 댓글달린 갯수 표시
+	public board(int id, int hit, int mid, String title, String writer, String answer_mail, 
+			String lang, String content, Date wdate, int cnt) {
+		this(mid,title,writer,answer_mail,lang,content);
+		this.id=id;
+		this.hit=hit;
+		this.wdate=wdate;
+		this.reply_cnt=cnt;
 	}
 	
 	
@@ -88,6 +98,12 @@ public class board {
 	}
 	public void setContent(String content) {
 		this.content = content;
+	}
+	public int getReply_cnt() {
+		return reply_cnt;
+	}
+	public void setReply_cnt(int reply_cnt) {
+		this.reply_cnt = reply_cnt;
 	}
 	
 }

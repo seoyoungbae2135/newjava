@@ -1,6 +1,11 @@
 /**
- * 20240124-7
+ * 20240124-7, 20240131-4
  */
+ 
+$(function(){  //20240131-4 추가
+	var preUrl = document.referrer;
+	$("#cmd").val(preUrl);
+});
  
  function login(){
 	if( $("#email").val()==''){

@@ -6,10 +6,17 @@
 <c:if test="${ fail !=null }">
 	<script>alert("아이디또는 비밀번호가 잘못되었습니다")</script>
 </c:if> 
+
+<%-- 20240131-4 추가, 이전페이지 주소가져오는 것, 취소하고 signin.js에서 구현
+<script>
+	var pre = document.referrer; 
+	alert(pre)
+</script>
+--%>
     
 <div id="signin_wrap">
 	<form id="signFm" method="post" action="/members/signExcute">
-		<input type="hidden" name="cmd" value="dao">
+		<input type="hidden" name="cmd" id="cmd" value="dao"> 
 		<div id="login_wrap">
 			<div class="login_input">
 				<input type="email" name="email" id="email" placeholder="이메일">	

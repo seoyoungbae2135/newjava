@@ -64,7 +64,10 @@
 									<tr>
 										<td class="num numtd">${res.id }</td>
 										<td class="title titletd">
-											<a href="/board_read.do?id=${res.id }">${res.title }</a>
+											<a href="/board_read.do?id=${res.id }">
+												${res.title }
+												<b style="color:red;">(${res.reply_cnt })</b> <%-- 20240131 추가, 댓글달린갯수표시 --%>
+											</a>
 										
 										</td>
 										<td class="date datetd">
